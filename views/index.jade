@@ -1,0 +1,21 @@
+form(method="post", enctype="multipart/form-data", action="/upload")
+        fieldset
+            legend 上传PDF文件
+            p
+                label(for="user[pdf]") PDF:
+                    input(type="file", name="pdf")
+            p
+                label.checkbox
+                    input(type='checkbox',name="pro[br]",checked='checked')
+                    | 去除br换行并分段
+                label.checkbox
+                    input(type='checkbox',name="pro[n]",checked='checked')
+                    | 去除文章中的换行符
+                label.checkbox
+                    input(type='checkbox',name="pro[nsp]",checked='checked')
+                    | 去除所有空格
+                label.checkbox
+                    input(type='checkbox',name="pro[html]",checked='checked')
+                    | 去除所有HTML标签，除p和img外
+            p.buttons
+                input(type="submit", value="上传")
